@@ -1368,7 +1368,42 @@ which, instead of relying on conventional rote memorization or
 
 
 
+<!-- BOTTOM MOBILE AD: 320x50 -->
+<div id="bottom-mobile-ad" style="width:100%; text-align:center;"></div>
 
+<script>
+(function () {
+  if (window.innerWidth > 500) return;
+
+  var container = document.getElementById("bottom-mobile-ad");
+
+  var wrapper = document.createElement("div");
+  wrapper.style.width = "320px";
+  wrapper.style.height = "50px";
+  wrapper.style.maxWidth = "100%";
+  wrapper.style.margin = "0 auto";
+  wrapper.style.overflow = "hidden";
+
+  var config = document.createElement("script");
+  config.textContent = "var atOptions = " + JSON.stringify({
+    key: "1defb0f3ee22d96a78e92a96b335d777",
+    format: "iframe",
+    height: 50,
+    width: 320,
+    params: {}
+  }) + ";";
+
+  var adScript = document.createElement("script");
+  adScript.src =
+    "https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js";
+  adScript.async = true;
+
+  wrapper.appendChild(config);
+  wrapper.appendChild(adScript);
+  container.appendChild(wrapper);
+})();
+</script>
+<!-- END BOTTOM MOBILE AD -->
     
 
     
