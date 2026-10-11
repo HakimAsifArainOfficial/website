@@ -782,58 +782,79 @@ which, instead of relying on conventional rote memorization or
           </p>
 
 
-<!-- =========================
-     CENTER RESPONSIVE AD
-     ========================= -->
 
-<div class="middle-ad">
+<!-- CENTER AD: RESPONSIVE JAVASCRIPT -->
+<div id="center-ad" style="width:100%; text-align:center;"></div>
 
-  <!-- 467–900px → 320×50 -->
-  <div class="middle-mobile-ad">
-    <script>
-      atOptions = {
-        'key' : '1defb0f3ee22d96a78e92a96b335d777',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
+<script>
+(function () {
+  const container = document.getElementById("center-ad");
+
+  function loadCenterAd() {
+    const screenWidth = window.innerWidth;
+
+    // 500px یا اس سے کم: کوئی اشتہار نہیں
+    if (screenWidth <= 500) {
+      container.replaceChildren();
+      return;
+    }
+
+    let ad;
+
+    // 501px سے 799px: 320×50
+    if (screenWidth < 800) {
+      ad = {
+        width: 320,
+        height: 50,
+        key: "1defb0f3ee22d96a78e92a96b335d777"
       };
-    </script>
-
-    <script src="https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js"></script>
-  </div>
-
-
-  <!-- 901–1200px → 468×60 -->
-  <div class="middle-tablet-ad">
-    <script>
-      atOptions = {
-        'key' : '60663995d84e910714fbea29c528d397',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
+    } 
+    // 800px یا اس سے زیادہ: 468×60
+    else {
+      ad = {
+        width: 468,
+        height: 60,
+        key: "60663995d84e910714fbea29c528d397"
       };
-    </script>
+    }
 
-    <script src="https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js"></script>
-  </div>
+    if (container.dataset.loadedKey === ad.key) return;
 
+    container.replaceChildren();
+    container.dataset.loadedKey = ad.key;
 
-  <!-- 1201–2000px → 728×90 -->
-  <div class="middle-desktop-ad">
-    <script>
-      atOptions = {
-        'key' : 'c5fadce4809733b6a313746c3f2319ea',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-    </script>
+    const wrapper = document.createElement("div");
+    wrapper.style.width = ad.width + "px";
+    wrapper.style.height = ad.height + "px";
+    wrapper.style.maxWidth = "100%";
+    wrapper.style.margin = "0 auto";
+    wrapper.style.overflow = "hidden";
 
-    <script src="https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js"></script>
-  </div>
+    const config = document.createElement("script");
+    config.text = "var atOptions = " + JSON.stringify({
+      key: ad.key,
+      format: "iframe",
+      height: ad.height,
+      width: ad.width,
+      params: {}
+    }) + ";";
+
+    const script = document.createElement("script");
+    script.src =
+      "https://www.highrevenueformat.com/" +
+      ad.key + "/invoke.js";
+    script.async = true;
+
+    wrapper.appendChild(config);
+    wrapper.appendChild(script);
+    container.appendChild(wrapper);
+  }
+
+  loadCenterAd();
+})();
+</script>
+
+          
 
 </div>
 
