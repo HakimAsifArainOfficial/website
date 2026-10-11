@@ -1368,82 +1368,14 @@ which, instead of relying on conventional rote memorization or
 
 
 
-<!-- BOTTOM AD: RESPONSIVE JAVASCRIPT -->
-<div id="bottom-ad" style="width:100%; text-align:center;"></div>
 
-<script>
-(function () {
-  const container = document.getElementById("bottom-ad");
-  let loadedKey = "";
+    
 
-  function loadBottomAd() {
-    const screenWidth = window.innerWidth;
-    let ad;
-
-    if (screenWidth <= 360) {
-      ad = {
-        width: 320,
-        height: 50,
-        key: "1defb0f3ee22d96a78e92a96b335d777"
-      };
-    } else if (screenWidth <= 500) {
-      ad = {
-        width: 468,
-        height: 60,
-        key: "60663995d84e910714fbea29c528d397"
-      };
-    } else {
-      ad = {
-        width: 728,
-        height: 90,
-        key: "c5fadce4809733b6a313746c3f2319ea"
-      };
-    }
-
-    if (loadedKey === ad.key) return;
-
-    loadedKey = ad.key;
-    container.replaceChildren();
-
-    const wrapper = document.createElement("div");
-    wrapper.style.width = ad.width + "px";
-    wrapper.style.height = ad.height + "px";
-    wrapper.style.maxWidth = "100%";
-    wrapper.style.margin = "0 auto";
-    wrapper.style.overflow = "hidden";
-
-    const config = document.createElement("script");
-    config.textContent =
-      "var atOptions = " + JSON.stringify({
-        key: ad.key,
-        format: "iframe",
-        height: ad.height,
-        width: ad.width,
-        params: {}
-      }) + ";";
-
-    const script = document.createElement("script");
-    script.src =
-      "https://www.highrevenueformat.com/" +
-      ad.key + "/invoke.js";
-    script.async = true;
-
-    wrapper.appendChild(config);
-    wrapper.appendChild(script);
-    container.appendChild(wrapper);
-  }
-
-  let resizeTimer;
-
-  loadBottomAd();
-
-  window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(loadBottomAd, 250);
-  });
-})();
-</script>
-
+    
+        
+    
+        
+    
 
         
       
