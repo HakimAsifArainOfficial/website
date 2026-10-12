@@ -270,18 +270,14 @@
       <div class="classic-wrapper">
 
 
-
-
-        
-
 <!-- ٹاپ موبائل ایڈ پلیسمنٹ (صرف 468 پکسل تک چلے گا) -->
-<div id="dynamic-top-mobile-ad" style="text-align: center; width: 100%;"></div>
+<div id="dynamic-top-mobile-ad" class="top-ad"></div>
 
 <script>
   (function() {
     var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    // یہ اشتہار صرف 468 پکسل یا اس سے کم چوڑائی والی اسکرین پر لوڈ ہوگا
+    // شرط: صرف 468 پکسل یا اس سے کم پر چلے گا
     if (currentWidth <= 468) {
       window.atOptions = {
         'key' : '1defb0f3ee22d96a78e92a96b335d777',
@@ -303,17 +299,15 @@
 
 
 
-
-
-<!-- ٹاپ ٹیبلٹ ایڈ پلیسمنٹ (صرف 728 پکسل تک چلے گا) -->
-<div id="dynamic-tablet-ad" style="text-align: center; width: 100%;"></div>
+<!-- ٹاپ ٹیبلٹ ایڈ پلیسمنٹ (صرف 469 پکسل سے 728 پکسل تک چلے گا) -->
+<div id="dynamic-top-tablet-ad" class="top-ad"></div>
 
 <script>
   (function() {
     var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    // یہ اشتہار صرف 728 پکسل یا اس سے کم چوڑائی والی اسکرین پر لوڈ ہوگا
-    if (currentWidth <= 728) {
+    // شرط: 468 پکسل سے بڑی اور 728 پکسل تک کی اسکرین پر چلے گا
+    if (currentWidth > 468 && currentWidth <= 728) {
       window.atOptions = {
         'key' : '60663995d84e910714fbea29c528d397',
         'format' : 'iframe',
@@ -322,7 +316,7 @@
         'params' : {}
       };
       
-      var container = document.getElementById('dynamic-tablet-ad');
+      var container = document.getElementById('dynamic-top-tablet-ad');
       var scriptElement = document.createElement('script');
       scriptElement.type = 'text/javascript';
       scriptElement.src = 'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
@@ -334,22 +328,15 @@
 
 
 
-
-
-
-
 <!-- ڈیسک ٹاپ لارج ایڈ پلیسمنٹ (صرف 728 پکسل سے بڑی اسکرین پر چلے گا) -->
-<div id="dynamic-desktop-large-ad" style="text-align: center; width: 100%;"></div>
+<div id="dynamic-top-desktop-large-ad" class="top-ad"></div>
 
 <script>
   (function() {
-    // براؤزر کی موجودہ چوڑائی چیک کریں
     var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    // شرط: اگر اسکرین سائز 728 پکسل سے زیادہ ہو تو ہی ایڈ لوڈ ہو
+    // شرط: صرف 728 پکسل سے بڑی اسکرین پر چلے گا
     if (currentWidth > 728) {
-      
-      // ایڈ کی سیٹنگز سیٹ کریں
       window.atOptions = {
         'key' : 'c5fadce4809733b6a313746c3f2319ea',
         'format' : 'iframe',
@@ -358,8 +345,7 @@
         'params' : {}
       };
       
-      // ایڈ کنٹینر کو سلیکٹ کریں اور اسکرپٹ داخل کریں
-      var container = document.getElementById('dynamic-desktop-large-ad');
+      var container = document.getElementById('dynamic-top-desktop-large-ad');
       var scriptElement = document.createElement('script');
       scriptElement.type = 'text/javascript';
       scriptElement.src = 'https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js';
@@ -369,9 +355,6 @@
   })();
 </script>
 
-
-        
-        
 
 
       <!-- =========================
