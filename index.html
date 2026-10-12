@@ -275,8 +275,10 @@
 
 <script>
 (function () {
-  if (window.innerWidth < 468 || window.innerWidth > 728) return;
 
+if (window.innerWidth <= 468 || window.innerWidth > 728) return;
+
+  
   var container = document.getElementById("top-ad-468");
 
   var wrapper = document.createElement("div");
