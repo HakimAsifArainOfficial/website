@@ -91,76 +91,6 @@
 </head>
 <body>
 
-<style>
-.mobile-ad-320 {
-  display: none;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  min-height: 50px;
-}
-
-@media screen and (max-width: 468px) {
-  .mobile-ad-320 {
-    display: flex;
-  }
-}
-</style>
-
-<div class="mobile-ad-320" id="mobileAd320"></div>
-
-<script>
-(function () {
-  if (window.innerWidth > 468) {
-    return;
-  }
-
-  var adContainer = document.getElementById('mobileAd320');
-
-  if (!adContainer || adContainer.dataset.loaded === 'true') {
-    return;
-  }
-
-  adContainer.dataset.loaded = 'true';
-
-  var adFrame = document.createElement('iframe');
-
-  adFrame.width = '320';
-  adFrame.height = '50';
-  adFrame.style.border = '0';
-  adFrame.style.overflow = 'hidden';
-  adFrame.setAttribute('scrolling', 'no');
-  adFrame.src = 'about:blank';
-
-  adContainer.appendChild(adFrame);
-
-  var frameDoc = adFrame.contentDocument;
-
-  frameDoc.open();
-  frameDoc.write(`
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta name="viewport" content="width=320">
-    </head>
-    <body style="margin:0;padding:0;width:320px;height:50px;overflow:hidden;">
-      <script>
-        var atOptions = {
-          'key': '1defb0f3ee22d96a78e92a96b335d777',
-          'format': 'iframe',
-          'height': 50,
-          'width': 320,
-          'params': {}
-        };
-      <\/script>
-      <script src="https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js"><\/script>
-    </body>
-    </html>
-  `);
-  frameDoc.close();
-})();
-</script>
 
 <style>
 .tablet-ad-468 {
@@ -358,6 +288,80 @@
         <li>However, if Asif Azazil chooses to meet or work with another entity as part of his private affairs, and any external force adopts an adverse, hostile, or unfavorable attitude toward that entity because of their association with him, it will immediately become a direct matter of Asif Azazil himself, to be handled exclusively by him.</li>
     </ul>
 </div>
+
+
+<style>
+.mobile-ad-320 {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  min-height: 50px;
+}
+
+@media screen and (max-width: 468px) {
+  .mobile-ad-320 {
+    display: flex;
+  }
+}
+</style>
+
+<div class="mobile-ad-320" id="mobileAd320"></div>
+
+<script>
+(function () {
+  if (window.innerWidth > 468) {
+    return;
+  }
+
+  var adContainer = document.getElementById('mobileAd320');
+
+  if (!adContainer || adContainer.dataset.loaded === 'true') {
+    return;
+  }
+
+  adContainer.dataset.loaded = 'true';
+
+  var adFrame = document.createElement('iframe');
+
+  adFrame.width = '320';
+  adFrame.height = '50';
+  adFrame.style.border = '0';
+  adFrame.style.overflow = 'hidden';
+  adFrame.setAttribute('scrolling', 'no');
+  adFrame.src = 'about:blank';
+
+  adContainer.appendChild(adFrame);
+
+  var frameDoc = adFrame.contentDocument;
+
+  frameDoc.open();
+  frameDoc.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta name="viewport" content="width=320">
+    </head>
+    <body style="margin:0;padding:0;width:320px;height:50px;overflow:hidden;">
+      <script>
+        var atOptions = {
+          'key': '1defb0f3ee22d96a78e92a96b335d777',
+          'format': 'iframe',
+          'height': 50,
+          'width': 320,
+          'params': {}
+        };
+      <\/script>
+      <script src="https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js"><\/script>
+    </body>
+    </html>
+  `);
+  frameDoc.close();
+})();
+</script>
+
+    
 
 </body>
 </html>
