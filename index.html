@@ -727,57 +727,77 @@ which, instead of relying on conventional rote memorization or
           </p>
 
 
-<style>
-  .desktop-ad-468 {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 20px auto;
-  }
 
-  @media screen and (min-width: 730px) {
-    .desktop-ad-468 {
-      display: flex;
-    }
+  <style>
+.desktop-ad-468 {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  min-height: 60px;
+}
+
+@media screen and (min-width: 730px) {
+  .desktop-ad-468 {
+    display: flex;
   }
+}
 </style>
 
 <div class="desktop-ad-468" id="desktopAd468"></div>
 
 <script>
 (function () {
-  const adContainer = document.getElementById('desktopAd468');
-
-  function loadDesktopAd() {
-    if (window.innerWidth < 730) return;
-    if (adContainer.dataset.loaded === 'true') return;
-
-    adContainer.dataset.loaded = 'true';
-
-    const optionsScript = document.createElement('script');
-    optionsScript.text = `
-      atOptions = {
-        'key': '60663995d84e910714fbea29c528d397',
-        'format': 'iframe',
-        'height': 60,
-        'width': 468,
-        'params': {}
-      };
-    `;
-
-    const adScript = document.createElement('script');
-    adScript.src =
-      'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
-
-    adContainer.appendChild(optionsScript);
-    adContainer.appendChild(adScript);
+  if (window.innerWidth < 730) {
+    return;
   }
 
-  loadDesktopAd();
+  var adContainer = document.getElementById('desktopAd468');
+
+  if (!adContainer || adContainer.dataset.loaded === 'true') {
+    return;
+  }
+
+  adContainer.dataset.loaded = 'true';
+
+  var adFrame = document.createElement('iframe');
+
+  adFrame.width = '468';
+  adFrame.height = '60';
+  adFrame.style.border = '0';
+  adFrame.style.overflow = 'hidden';
+  adFrame.setAttribute('scrolling', 'no');
+  adFrame.src = 'about:blank';
+
+  adContainer.appendChild(adFrame);
+
+  var frameDoc = adFrame.contentDocument;
+
+  frameDoc.open();
+  frameDoc.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta name="viewport" content="width=468">
+    </head>
+    <body style="margin:0;padding:0;width:468px;height:60px;overflow:hidden;">
+      <script>
+        var atOptions = {
+          'key': '60663995d84e910714fbea29c528d397',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+      <\/script>
+      <script src="https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js"><\/script>
+    </body>
+    </html>
+  `);
+  frameDoc.close();
 })();
 </script>
-
           
 
 </div>
