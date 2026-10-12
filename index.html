@@ -269,20 +269,223 @@
       <div class="classic-wrapper">
 
 
-<div style="display: flex; justify-content: center; width: 100%;">
-        
-<script>
-  atOptions = {
-    'key' : '1defb0f3ee22d96a78e92a96b335d777',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js"></script>
 
-</div>
+<style>
+.mobile-ad-320 {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  min-height: 50px;
+}
+
+@media screen and (max-width: 468px) {
+  .mobile-ad-320 {
+    display: flex;
+  }
+}
+</style>
+
+<div class="mobile-ad-320" id="mobileAd320"></div>
+
+<script>
+(function () {
+  if (window.innerWidth > 468) {
+    return;
+  }
+
+  var adContainer = document.getElementById('mobileAd320');
+
+  if (!adContainer || adContainer.dataset.loaded === 'true') {
+    return;
+  }
+
+  adContainer.dataset.loaded = 'true';
+
+  var adFrame = document.createElement('iframe');
+
+  adFrame.width = '320';
+  adFrame.height = '50';
+  adFrame.style.border = '0';
+  adFrame.style.overflow = 'hidden';
+  adFrame.setAttribute('scrolling', 'no');
+  adFrame.src = 'about:blank';
+
+  adContainer.appendChild(adFrame);
+
+  var frameDoc = adFrame.contentDocument;
+
+  frameDoc.open();
+  frameDoc.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta name="viewport" content="width=320">
+    </head>
+    <body style="margin:0;padding:0;width:320px;height:50px;overflow:hidden;">
+      <script>
+        var atOptions = {
+          'key': '1defb0f3ee22d96a78e92a96b335d777',
+          'format': 'iframe',
+          'height': 50,
+          'width': 320,
+          'params': {}
+        };
+      <\/script>
+      <script src="https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js"><\/script>
+    </body>
+    </html>
+  `);
+  frameDoc.close();
+})();
+</script>
+
+
+        <style>
+.tablet-ad-468 {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  min-height: 60px;
+}
+
+@media screen and (min-width: 469px) and (max-width: 728px) {
+  .tablet-ad-468 {
+    display: flex;
+  }
+}
+</style>
+
+<div class="tablet-ad-468" id="tabletAd468"></div>
+
+<script>
+(function () {
+  if (window.innerWidth < 469 || window.innerWidth > 728) {
+    return;
+  }
+
+  var adContainer = document.getElementById('tabletAd468');
+
+  if (!adContainer || adContainer.dataset.loaded === 'true') {
+    return;
+  }
+
+  adContainer.dataset.loaded = 'true';
+
+  var adFrame = document.createElement('iframe');
+
+  adFrame.width = '468';
+  adFrame.height = '60';
+  adFrame.style.border = '0';
+  adFrame.style.overflow = 'hidden';
+  adFrame.setAttribute('scrolling', 'no');
+  adFrame.src = 'about:blank';
+
+  adContainer.appendChild(adFrame);
+
+  var frameDoc = adFrame.contentDocument;
+
+  frameDoc.open();
+  frameDoc.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta name="viewport" content="width=468">
+    </head>
+    <body style="margin:0;padding:0;width:468px;height:60px;overflow:hidden;">
+      <script>
+        var atOptions = {
+          'key': '60663995d84e910714fbea29c528d397',
+          'format': 'iframe',
+          'height': 60,
+          'width': 468,
+          'params': {}
+        };
+      <\/script>
+      <script src="https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js"><\/script>
+    </body>
+    </html>
+  `);
+  frameDoc.close();
+})();
+</script>
+
+
+        <style>
+.desktop-ad-728 {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  min-height: 90px;
+}
+
+@media screen and (min-width: 729px) {
+  .desktop-ad-728 {
+    display: flex;
+  }
+}
+</style>
+
+<div class="desktop-ad-728" id="desktopAd728"></div>
+
+<script>
+(function () {
+  if (window.innerWidth < 729) {
+    return;
+  }
+
+  var adContainer = document.getElementById('desktopAd728');
+
+  if (!adContainer || adContainer.dataset.loaded === 'true') {
+    return;
+  }
+
+  adContainer.dataset.loaded = 'true';
+
+  var adFrame = document.createElement('iframe');
+
+  adFrame.width = '728';
+  adFrame.height = '90';
+  adFrame.style.border = '0';
+  adFrame.style.overflow = 'hidden';
+  adFrame.setAttribute('scrolling', 'no');
+  adFrame.src = 'about:blank';
+
+  adContainer.appendChild(adFrame);
+
+  var frameDoc = adFrame.contentDocument;
+
+  frameDoc.open();
+  frameDoc.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta name="viewport" content="width=728">
+    </head>
+    <body style="margin:0;padding:0;width:728px;height:90px;overflow:hidden;">
+      <script>
+        var atOptions = {
+          'key': 'c5fadce4809733b6a313746c3f2319ea',
+          'format': 'iframe',
+          'height': 90,
+          'width': 728,
+          'params': {}
+        };
+      <\/script>
+      <script src="https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js"><\/script>
+    </body>
+    </html>
+  `);
+  frameDoc.close();
+})();
+</script>
+
+
 
         
 
