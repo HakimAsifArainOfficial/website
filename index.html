@@ -1395,124 +1395,92 @@ which, instead of relying on conventional rote memorization or
 
 
 
-
-<!-- BOTTOM MOBILE AD: 320x50 -->
-<div id="bottom-mobile-ad" style="width:100%; text-align:center;"></div>
-
-<script>
-(function () {
-  if (window.innerWidth > 468) return;
-
-  var container = document.getElementById("bottom-mobile-ad");
-
-  var wrapper = document.createElement("div");
-  wrapper.style.width = "320px";
-  wrapper.style.height = "50px";
-  wrapper.style.maxWidth = "100%";
-  wrapper.style.margin = "0 auto";
-  wrapper.style.overflow = "hidden";
-
-  var config = document.createElement("script");
-  config.textContent = "var atOptions = " + JSON.stringify({
-    key: "1defb0f3ee22d96a78e92a96b335d777",
-    format: "iframe",
-    height: 50,
-    width: 320,
-    params: {}
-  }) + ";";
-
-  var adScript = document.createElement("script");
-  adScript.src =
-    "https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js";
-  adScript.async = true;
-
-  wrapper.appendChild(config);
-  wrapper.appendChild(adScript);
-  container.appendChild(wrapper);
-})();
-</script>
-<!-- END BOTTOM MOBILE AD -->
-    
-
-    
-        
-    
-        <!-- BOTTOM AD: 468x60 -->
-<div id="bottom-ad-468" style="width:100%; text-align:center;"></div>
+<!-- باٹم موبائل ایڈ پلیسمنٹ (صرف 468 پکسل تک نیچے چلے گا) -->
+<div id="dynamic-bottom-mobile-ad" class="bottom-ad"></div>
 
 <script>
-(function () {
-  if (window.innerWidth < 468 || window.innerWidth > 728) return;
+  (function() {
+    var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-  var container = document.getElementById("bottom-ad-468");
-
-  var wrapper = document.createElement("div");
-  wrapper.style.width = "468px";
-  wrapper.style.height = "60px";
-  wrapper.style.maxWidth = "100%";
-  wrapper.style.margin = "0 auto";
-  wrapper.style.overflow = "hidden";
-
-  var config = document.createElement("script");
-  config.textContent = "var atOptions = " + JSON.stringify({
-    key: "60663995d84e910714fbea29c528d397",
-    format: "iframe",
-    height: 60,
-    width: 468,
-    params: {}
-  }) + ";";
-
-  var adScript = document.createElement("script");
-  adScript.src =
-    "https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js";
-  adScript.async = true;
-
-  wrapper.appendChild(config);
-  wrapper.appendChild(adScript);
-  container.appendChild(wrapper);
-})();
+    // شرط: صرف 468 پکسل یا اس سے کم پر چلے گا
+    if (currentWidth <= 468) {
+      window.atOptions = {
+        'key' : '1defb0f3ee22d96a78e92a96b335d777',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
+      
+      var container = document.getElementById('dynamic-bottom-mobile-ad');
+      var scriptElement = document.createElement('script');
+      scriptElement.type = 'text/javascript';
+      scriptElement.src = 'https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js';
+      
+      container.appendChild(scriptElement);
+    }
+  })();
 </script>
-<!-- END BOTTOM AD: 468x60 -->
 
 
 
-        <!-- BOTTOM AD: 728x90 -->
-<div id="bottom-ad-728" style="width:100%; text-align:center;"></div>
+
+
+<!-- باٹم ٹیبلٹ ایڈ پلیسمنٹ (صرف 469 پکسل سے 728 پکسل تک نیچے چلے گا) -->
+<div id="dynamic-bottom-tablet-ad" class="bottom-ad"></div>
 
 <script>
-(function () {
-  if (window.innerWidth <= 728) return;
+  (function() {
+    var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-  var container = document.getElementById("bottom-ad-728");
-
-  var wrapper = document.createElement("div");
-  wrapper.style.width = "728px";
-  wrapper.style.height = "90px";
-  wrapper.style.maxWidth = "100%";
-  wrapper.style.margin = "0 auto";
-  wrapper.style.overflow = "hidden";
-
-  var config = document.createElement("script");
-  config.textContent = "var atOptions = " + JSON.stringify({
-    key: "c5fadce4809733b6a313746c3f2319ea",
-    format: "iframe",
-    height: 90,
-    width: 728,
-    params: {}
-  }) + ";";
-
-  var adScript = document.createElement("script");
-  adScript.src =
-    "https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js";
-  adScript.async = true;
-
-  wrapper.appendChild(config);
-  wrapper.appendChild(adScript);
-  container.appendChild(wrapper);
-})();
+    // شرط: 468 پکسل سے بڑی اور 728 پکسل تک کی اسکرین پر چلے گا
+    if (currentWidth > 468 && currentWidth <= 728) {
+      window.atOptions = {
+        'key' : '60663995d84e910714fbea29c528d397',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+      
+      var container = document.getElementById('dynamic-bottom-tablet-ad');
+      var scriptElement = document.createElement('script');
+      scriptElement.type = 'text/javascript';
+      scriptElement.src = 'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
+      
+      container.appendChild(scriptElement);
+    }
+  })();
 </script>
-<!-- END BOTTOM AD: 728x90 -->
-    
+
+
+
+<!-- باٹم ڈیسک ٹاپ لارج ایڈ پلیسمنٹ (صرف 728 پکسل سے بڑی اسکرین پر نیچے چلے گا) -->
+<div id="dynamic-bottom-desktop-large-ad" class="bottom-ad"></div>
+
+<script>
+  (function() {
+    var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // شرط: صرف 728 پکسل سے بڑی اسکرین پر چلے گا
+    if (currentWidth > 728) {
+      window.atOptions = {
+        'key' : 'c5fadce4809733b6a313746c3f2319ea',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+      
+      var container = document.getElementById('dynamic-bottom-desktop-large-ad');
+      var scriptElement = document.createElement('script');
+      scriptElement.type = 'text/javascript';
+      scriptElement.src = 'https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js';
+      
+      container.appendChild(scriptElement);
+    }
+  })();
+</script>
 
         
       
