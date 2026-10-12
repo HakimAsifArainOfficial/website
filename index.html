@@ -206,7 +206,7 @@
     }
 
     /* =========================
-       BOTTOM 728x90 AD
+       BOTTOM Native Banner AD
        35px above
        4px below
        ========================= */
@@ -216,7 +216,6 @@
       margin-top: 35px;
       margin-bottom: 4px;
       text-align: center;
-      overflow: hidden;
     }
 
     /* =========================
@@ -270,90 +269,76 @@
       <div class="classic-wrapper">
 
 
-<!-- ٹاپ موبائل ایڈ پلیسمنٹ (صرف 468 پکسل تک چلے گا) -->
-<div id="dynamic-top-mobile-ad" class="top-ad"></div>
 
 <script>
-  (function() {
-    var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+(function() {
+  if (window.innerWidth > 468) return;
 
-    // شرط: صرف 468 پکسل یا اس سے کم پر چلے گا
-    if (currentWidth <= 468) {
-      window.atOptions = {
-        'key' : '1defb0f3ee22d96a78e92a96b335d777',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-      };
-      
-      var container = document.getElementById('dynamic-top-mobile-ad');
-      var scriptElement = document.createElement('script');
-      scriptElement.type = 'text/javascript';
-      scriptElement.src = 'https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js';
-      
-      container.appendChild(scriptElement);
-    }
-  })();
+  var atOptions = {
+    'key' : '1defb0f3ee22d96a78e92a96b335d777',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+
+  window.atOptions = atOptions;
+
+  var adScript = document.createElement('script');
+  adScript.src = 'https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js';
+  document.currentScript.parentNode.appendChild(adScript);
+})();
 </script>
 
 
 
-<!-- ٹاپ ٹیبلٹ ایڈ پلیسمنٹ (صرف 469 پکسل سے 728 پکسل تک چلے گا) -->
-<div id="dynamic-top-tablet-ad" class="top-ad"></div>
-
 <script>
-  (function() {
-    var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+(function() {
+  if (window.innerWidth <= 468 || window.innerWidth > 728) return;
 
-    // شرط: 468 پکسل سے بڑی اور 728 پکسل تک کی اسکرین پر چلے گا
-    if (currentWidth > 468 && currentWidth <= 728) {
-      window.atOptions = {
-        'key' : '60663995d84e910714fbea29c528d397',
-        'format' : 'iframe',
-        'height' : 60,
-        'width' : 468,
-        'params' : {}
-      };
-      
-      var container = document.getElementById('dynamic-top-tablet-ad');
-      var scriptElement = document.createElement('script');
-      scriptElement.type = 'text/javascript';
-      scriptElement.src = 'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
-      
-      container.appendChild(scriptElement);
-    }
-  })();
+  var atOptions = {
+    'key' : '60663995d84e910714fbea29c528d397',
+    'format' : 'iframe',
+    'height' : 60,
+    'width' : 468,
+    'params' : {}
+  };
+
+  window.atOptions = atOptions;
+
+  var adScript = document.createElement('script');
+  adScript.src = 'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
+  document.currentScript.parentNode.appendChild(adScript);
+})();
 </script>
 
 
 
-<!-- ڈیسک ٹاپ لارج ایڈ پلیسمنٹ (صرف 728 پکسل سے بڑی اسکرین پر چلے گا) -->
-<div id="dynamic-top-desktop-large-ad" class="top-ad"></div>
 
-<script>
-  (function() {
-    var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    // شرط: صرف 728 پکسل سے بڑی اسکرین پر چلے گا
-    if (currentWidth > 728) {
-      window.atOptions = {
-        'key' : 'c5fadce4809733b6a313746c3f2319ea',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-      
-      var container = document.getElementById('dynamic-top-desktop-large-ad');
-      var scriptElement = document.createElement('script');
-      scriptElement.type = 'text/javascript';
-      scriptElement.src = 'https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js';
-      
-      container.appendChild(scriptElement);
-    }
-  })();
+
+        <script>
+(function() {
+  if (window.innerWidth <= 728) return;
+
+  var atOptions = {
+    'key' : 'c5fadce4809733b6a313746c3f2319ea',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+
+  window.atOptions = atOptions;
+
+  var adScript = document.createElement('script');
+  adScript.src = 'https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js';
+  document.currentScript.parentNode.appendChild(adScript);
+})();
 </script>
+
+        
+
 
 
 
