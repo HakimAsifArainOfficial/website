@@ -271,76 +271,62 @@
 
 
 <script>
-(function() {
-  if (window.innerWidth > 468) return;
+(function () {
+  var width = window.innerWidth;
+  var ad;
 
-  var atOptions = {
-    'key' : '1defb0f3ee22d96a78e92a96b335d777',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
+  if (width <= 468) {
+    ad = {
+      key: '1defb0f3ee22d96a78e92a96b335d777',
+      width: 320,
+      height: 50
+    };
+  } else if (width <= 728) {
+    ad = {
+      key: '60663995d84e910714fbea29c528d397',
+      width: 468,
+      height: 60
+    };
+  } else {
+    ad = {
+      key: 'c5fadce4809733b6a313746c3f2319ea',
+      width: 728,
+      height: 90
+    };
+  }
 
-  window.atOptions = atOptions;
+  var container = document.createElement('div');
+  container.style.width = ad.width + 'px';
+  container.style.height = ad.height + 'px';
+  container.style.maxWidth = '100%';
 
-  var adScript = document.createElement('script');
-  adScript.src = 'https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js';
-  document.currentScript.parentNode.appendChild(adScript);
+  var options = document.createElement('script');
+  options.text = 'var atOptions = ' + JSON.stringify({
+    key: ad.key,
+    format: 'iframe',
+    height: ad.height,
+    width: ad.width,
+    params: {}
+  }) + ';';
+
+  container.appendChild(options);
+
+  var invoke = document.createElement('script');
+  invoke.src = 'https://www.highrevenueformat.com/' +
+               ad.key + '/invoke.js';
+
+  container.appendChild(invoke);
+
+  document.currentScript.parentNode.insertBefore(
+    container,
+    document.currentScript
+  );
 })();
 </script>
 
 
-
-<script>
-(function() {
-  if (window.innerWidth <= 468 || window.innerWidth > 728) return;
-
-  var atOptions = {
-    'key' : '60663995d84e910714fbea29c528d397',
-    'format' : 'iframe',
-    'height' : 60,
-    'width' : 468,
-    'params' : {}
-  };
-
-  window.atOptions = atOptions;
-
-  var adScript = document.createElement('script');
-  adScript.src = 'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
-  document.currentScript.parentNode.appendChild(adScript);
-})();
-</script>
-
-
-
-
-
-
-        <script>
-(function() {
-  if (window.innerWidth <= 728) return;
-
-  var atOptions = {
-    'key' : 'c5fadce4809733b6a313746c3f2319ea',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-
-  window.atOptions = atOptions;
-
-  var adScript = document.createElement('script');
-  adScript.src = 'https://www.highrevenueformat.com/c5fadce4809733b6a313746c3f2319ea/invoke.js';
-  document.currentScript.parentNode.appendChild(adScript);
-})();
-</script>
 
         
-
-
-
 
       <!-- =========================
            MAIN CLASSIC CONTENT
