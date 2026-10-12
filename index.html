@@ -727,91 +727,56 @@ which, instead of relying on conventional rote memorization or
           </p>
 
 
+<style>
+  .desktop-ad-468 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+  }
 
-          <!-- CENTER AD: 320x50 -->
-<div id="center-ad-320" style="width:100%; text-align:center;"></div>
+  @media screen and (min-width: 730px) {
+    .desktop-ad-468 {
+      display: flex;
+    }
+  }
+</style>
 
-<script>
-(function () {
-  var screenWidth = window.innerWidth;
-
-  // صرف 501px سے 799px تک
-  if (screenWidth <= 500 || screenWidth >= 800) return;
-
-  var container = document.getElementById("center-ad-320");
-
-  var wrapper = document.createElement("div");
-  wrapper.style.width = "320px";
-  wrapper.style.height = "50px";
-  wrapper.style.maxWidth = "100%";
-  wrapper.style.margin = "0 auto";
-  wrapper.style.overflow = "hidden";
-
-  var config = document.createElement("script");
-  config.textContent = "var atOptions = " + JSON.stringify({
-    key: "1defb0f3ee22d96a78e92a96b335d777",
-    format: "iframe",
-    height: 50,
-    width: 320,
-    params: {}
-  }) + ";";
-
-  var adScript = document.createElement("script");
-  adScript.src =
-    "https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js";
-  adScript.async = true;
-
-  wrapper.appendChild(config);
-  wrapper.appendChild(adScript);
-  container.appendChild(wrapper);
-})();
-</script>
-<!-- END CENTER AD: 320x50 -->
-
-
-
-
-<!-- CENTER AD: 468x60 -->
-<div id="center-ad-468" style="width:100%; text-align:center;"></div>
+<div class="desktop-ad-468" id="desktopAd468"></div>
 
 <script>
 (function () {
-  var screenWidth = window.innerWidth;
+  const adContainer = document.getElementById('desktopAd468');
 
-  // صرف 800px یا اس سے زیادہ چوڑائی پر
-  if (screenWidth < 800) return;
+  function loadDesktopAd() {
+    if (window.innerWidth < 730) return;
+    if (adContainer.dataset.loaded === 'true') return;
 
-  var container = document.getElementById("center-ad-468");
+    adContainer.dataset.loaded = 'true';
 
-  var wrapper = document.createElement("div");
-  wrapper.style.width = "468px";
-  wrapper.style.height = "60px";
-  wrapper.style.maxWidth = "100%";
-  wrapper.style.margin = "0 auto";
-  wrapper.style.overflow = "hidden";
+    const optionsScript = document.createElement('script');
+    optionsScript.text = `
+      atOptions = {
+        'key': '60663995d84e910714fbea29c528d397',
+        'format': 'iframe',
+        'height': 60,
+        'width': 468,
+        'params': {}
+      };
+    `;
 
-  var config = document.createElement("script");
-  config.textContent = "var atOptions = " + JSON.stringify({
-    key: "60663995d84e910714fbea29c528d397",
-    format: "iframe",
-    height: 60,
-    width: 468,
-    params: {}
-  }) + ";";
+    const adScript = document.createElement('script');
+    adScript.src =
+      'https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js';
 
-  var adScript = document.createElement("script");
-  adScript.src =
-    "https://www.highrevenueformat.com/60663995d84e910714fbea29c528d397/invoke.js";
-  adScript.async = true;
+    adContainer.appendChild(optionsScript);
+    adContainer.appendChild(adScript);
+  }
 
-  wrapper.appendChild(config);
-  wrapper.appendChild(adScript);
-  container.appendChild(wrapper);
+  loadDesktopAd();
 })();
 </script>
-<!-- END CENTER AD: 468x60 -->
-
-          
 
           
 
