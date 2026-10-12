@@ -268,57 +268,21 @@
 
       <div class="classic-wrapper">
 
-<!-- ایڈ کو سینٹر میں لانے کے لیے کنٹینر اور اسٹائل -->
-<div id="responsive-ad-container" style="display: flex; justify-content: center; align-items: center; text-align: center; margin: 10px auto; width: 100%; min-height: 50px;"></div>
 
-<script type="text/javascript">
-  (function() {
-    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var adKey = '';
-    var adWidth = 320;
-    var adHeight = 50;
-
-    // اسکرین سائز کے مطابق ایڈ کی سیٹنگز
-    if (screenWidth >= 469 && screenWidth <= 728) {
-      // Tablet Ad 468x60
-      adKey = '60663995d84e910714fbea29c528d397';
-      adWidth = 468;
-      adHeight = 60;
-    } else if (screenWidth > 728) {
-      // Desktop Ad 728x90
-      adKey = 'c5fadce4809733b6a313746c3f2319ea';
-      adWidth = 728;
-      adHeight = 90;
-    } else {
-      // Mobile Ad 320x50 (Less than 469)
-      adKey = '1defb0f3ee22d96a78e92a96b335d777';
-      adWidth = 320;
-      adHeight = 50;
-    }
-
-    // ایڈ کے آپشنز سیٹ کرنا
-    window.atOptions = {
-      'key' : adKey,
-      'format' : 'iframe',
-      'height' : adHeight,
-      'width' : adWidth,
-      'params' : {}
-    };
-
-    // ایڈ کی اسکرپٹ فائل کو ڈائنامک طریقے سے لوڈ کرنا
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://highrevenueformat.com' + adKey + '/invoke.js';
-    
-    // ایڈ کو کنٹینر کے اندر داخل کرنا
-    var container = document.getElementById('responsive-ad-container');
-    if (container) {
-      container.appendChild(script);
-    }
-  })();
+<div style="display: flex; justify-content: center; width: 100%;">
+        
+<script>
+  atOptions = {
+    'key' : '1defb0f3ee22d96a78e92a96b335d777',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
 </script>
+<script src="https://www.highrevenueformat.com/1defb0f3ee22d96a78e92a96b335d777/invoke.js"></script>
 
-
+</div>
 
         
 
